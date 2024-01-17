@@ -146,7 +146,7 @@ SocketApi::SocketApi(QObject *parent)
     SocketApiServer::removeServer(_socketPath);
 
     // Create the socket path:
-    if (!Utility::isMac()) {
+    if (!Utility::isMac() && !Utility::isWindows()) {
         // Not on macOS: there the directory is there, and created for us by the sandboxing
         // environment, because we belong to an App Group.
         QFileInfo info(_socketPath);
@@ -790,21 +790,11 @@ Q_INVOKABLE void OCC::SocketApi::command_OPEN_APP_LINK(const QString &localFile,
     }
 }
 
-void SocketApi::command_V2_LIST_ACCOUNTS(const QSharedPointer<SocketApiJobV2> &job) const
-{
-    QJsonArray out;
-    for (auto acc : AccountManager::instance()->accounts()) {
-        OC_DISABLE_DEPRECATED_WARNING; // allow use of id
-        out << QJsonObject({{QStringLiteral("name"), acc->account()->displayName()}, {QStringLiteral("id"), acc->account()->id()},
-            {QStringLiteral("uuid"), acc->account()->uuid().toString(QUuid::WithoutBraces)}});
-        OC_ENABLE_DEPRECATED_WARNING
-    }
-    job->success({ { QStringLiteral("accounts"), out } });
-}
-
 void SocketApi::command_V2_GET_CLIENT_ICON(const QSharedPointer<SocketApiJobV2> &job) const
 {
-    OC_ASSERT(job);
+    if (!OC_ENSURE_NOT(job.isNull())) {
+        return;
+    }
     const auto &arguments = job->arguments();
 
     const auto size = arguments.value(QStringLiteral("size"));
@@ -843,7 +833,28 @@ void SocketApi::command_V2_GET_CLIENT_ICON(const QSharedPointer<SocketApiJobV2> 
 
         data = pngBuffer.data().toBase64();
     }
-    job->success({ { QStringLiteral("png"), QString::fromUtf8(data) } });
+    job->success({{QStringLiteral("png"), QString::fromUtf8(data)}});
+}
+
+void SocketApi::command_V2_RETRIEVE_FILE_STATUS(const QSharedPointer<SocketApiJobV2> &job)
+{
+    if (!OC_ENSURE_NOT(job.isNull())) {
+        return;
+    }
+    const auto &arguments = job->arguments();
+
+    SyncFileStatus status = SyncFileStatus::StatusNone;
+    auto fileData = FileData::get(arguments.value(QStringLiteral("path")).toString());
+    if (fileData.folder) {
+        // The user probably visited this directory in the file shell.
+        // Let the listener know that it should now send status pushes for sibblings of this file.
+        // TODO:
+        // QString directory = fileData.localPath.left(fileData.localPath.lastIndexOf(QLatin1Char('/')));
+        // listener->registerMonitoredDirectory(qHash(directory));
+        status = fileData.syncFileStatus();
+    }
+
+    job->success({{QStringLiteral("status"), SyncFileStatus(status).toSocketAPIString()}});
 }
 
 void SocketApi::emailPrivateLink(const QUrl &link)
@@ -1196,6 +1207,7 @@ void SocketApiJobV2::doFinish(const QJsonObject &obj) const
         data[QStringLiteral("warning")] = _warning;
     }
     _socketListener->sendMessage(_command + QStringLiteral("_RESULT:") + QString::fromUtf8(QJsonDocument(data).toJson(QJsonDocument::Compact)));
+    qCDebug(lcSocketApi) << "SocketApiJobV2" << _jobId << "finished" << _timer.duration() << _socketListener;
     Q_EMIT finished();
 }
 

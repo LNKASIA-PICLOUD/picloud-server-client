@@ -127,8 +127,7 @@ private:
     Q_INVOKABLE void command_MOVE_ITEM(const QString &localFile, SocketListener *listener);
 
     Q_INVOKABLE void command_OPEN_APP_LINK(const QString &localFile, SocketListener *listener);
-    // External sync
-    Q_INVOKABLE void command_V2_LIST_ACCOUNTS(const QSharedPointer<SocketApiJobV2> &job) const;
+
 
     // Sends the id and the client icon as PNG image (base64 encoded) in Json key "png"
     // e.g. { "id" : "1", "arguments" : { "png" : "hswehs343dj8..." } } or an error message in key "error"
@@ -136,6 +135,9 @@ private:
     // Argument is a SocketApiJobV2 job which contains an id and the required icon size in Json format
     // e.g. { "id" : "1", "arguments" : { "size" : 16 } }
     Q_INVOKABLE void command_V2_GET_CLIENT_ICON(const QSharedPointer<SocketApiJobV2> &job) const;
+
+
+    Q_INVOKABLE void command_V2_RETRIEVE_FILE_STATUS(const QSharedPointer<SocketApiJobV2> &job);
 
     // Fetch the private link and call targetFun
     void fetchPrivateLinkUrlHelper(const QString &localFile, const std::function<void(const QUrl &url)> &targetFun);
