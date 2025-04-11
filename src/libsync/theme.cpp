@@ -201,7 +201,7 @@ QString Theme::defaultServerFolder() const
 
 QString Theme::helpUrl() const
 {
-    return QStringLiteral("https://doc.owncloud.com/desktop/latest/");
+    return QStringLiteral("https://lnkasia.com/contactus");
 }
 
 QString Theme::conflictHelpUrl() const
@@ -325,7 +325,7 @@ QString Theme::about() const
     // changing the location of the settings and other registery keys.
     const QString vendor = Resources::isVanillaTheme() ? QStringLiteral("LNKASIA TECHSOL") : QStringLiteral(APPLICATION_VENDOR);
     return tr("<p>Version %1. For more information visit <a href=\"%2\">https://lnkasia.com</a></p>"
-              "<p>For known issues and help, please visit: <a href=\"https://lnkasia.com</a></p>"
+              "<p>For known issues and help, please visit: <a href=\"https://lnkasia.com\">https://lnkasia.com</a></p>"
               "<p>Copyright LNKASIA TECHSOL</p>"
               "<p>Distributed by %4 and licensed under the GNU General Public License (GPL) Version 2.0.<br/>"
               "%5 and the %5 logo are registered trademarks of %4 in the "
