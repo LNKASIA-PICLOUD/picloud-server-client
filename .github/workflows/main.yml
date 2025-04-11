@@ -1,4 +1,4 @@
-name: ownCloud CI (Windows Only)
+name: PiCloud CI (Windows Only)
 
 on:
   push:
