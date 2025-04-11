@@ -2,7 +2,7 @@ blank_issues_enabled: false
 
 contact_links:
   - name: 📚 Official ownCloud Documentation
-    url: https://doc.owncloud.com/docs/next/client_releases.html
+    url: https://lnkasia.com/docs/next/client_releases.html
     about: You can find a detailed user guide in our official documentation. Please refer to this document first before asking a question!
   - name: 💡 Discussion Forum
     url: https://central.owncloud.org/

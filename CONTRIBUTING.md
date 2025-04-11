@@ -37,7 +37,7 @@ our [Contributor Agreement][agreement].
 Please read the [Desktop Client Manual][desktopman] to get useful info about the client.
 
 [agreement]: https://owncloud.com/contribute/join-the-development/contributor-agreement/
-[desktopman]: https://doc.owncloud.com/desktop
+[desktopman]: https://lnkasia.com/desktop
 
 ## Translations
 

@@ -12,7 +12,7 @@ __TODO__:
 ### Administration
 
 * [ ] QA: Update [Test Plans](https://infinite.owncloud.com/f/31e6d44f-f373-557c-9ab3-1748fc0c650d$4994cd9c-1c17-4254-829a-f5ef6e1ff7e3%21c0c0d47e-5da5-4254-8b02-bd8e97d43dfb)
-* [ ] Update [supported platforms](https://doc.owncloud.com/desktop/next/installing.html#system-requirements) @DeepDiver1975
+* [ ] Update [supported platforms](https://lnkasia.com/desktop/next/installing.html#system-requirements) @DeepDiver1975
 * [ ] QA: Check the translations coming from transifex: https://github.com/owncloud/client/commits/ -> Filter based on a release branch/tag and search for `[tx] updated client translations from transifex [skip ci]`
 * [ ] DEV: Check for new OpenSSL version 
 * [ ] DEV: Update [dependencies](https://infinite.owncloud.com/f/31e6d44f-f373-557c-9ab3-1748fc0c650d$4994cd9c-1c17-4254-829a-f5ef6e1ff7e3%21d231d3ed-498f-42b8-87e0-87420e66e16c)
@@ -69,7 +69,7 @@ __TODO__:
 * [ ] QA: [Smoke test](https://infinite.owncloud.com/f/31e6d44f-f373-557c-9ab3-1748fc0c650d$4994cd9c-1c17-4254-829a-f5ef6e1ff7e3%21bc6b66c2-84e3-4a92-926c-c7fa2492f85e)
 * [ ] DEV: Publish the release in GitHub
 * [ ] QA: Update lines 4 and 5 of [install docs](https://github.com/owncloud/docs-client-desktop/blob/master/modules/ROOT/pages/installing.adoc) with the final build number. Merge into master and backport to the respective branch
-* [ ] QA: Check that [documentation](https://doc.owncloud.com/desktop/next/) offers the new version
+* [ ] QA: Check that [documentation](https://lnkasia.com/desktop/next/) offers the new version
 * [ ] DEV: Merge version branch into master
 * [ ] DEV: Update [SBOM](https://cloud.owncloud.com/f/6072843)
 
