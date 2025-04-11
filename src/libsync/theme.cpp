@@ -201,7 +201,7 @@ QString Theme::defaultServerFolder() const
 
 QString Theme::helpUrl() const
 {
-    return QStringLiteral("https://lnkasia.com/contactus");
+    return QStringLiteral("https://lnkasia.com/");
 }
 
 QString Theme::conflictHelpUrl() const
