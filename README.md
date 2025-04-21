@@ -6,3 +6,5 @@
 
 The PiCloud Desktop Client is a tool to synchronize files from PiCloud Server
 with your computer.
+
+updating
