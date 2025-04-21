@@ -59,8 +59,7 @@ jobs:
     - name: Install Bash
       run: |
         choco install git -y
-        echo "::add-path::C:\\Program Files\\Git\\bin"
-        bash --version
+        echo "C:\\Program Files\\Git\\bin" >> $env:GITHUB_ENV
 
     - name: Validate Bash Installation
       run: |
