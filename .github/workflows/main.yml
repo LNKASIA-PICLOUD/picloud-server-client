@@ -55,18 +55,6 @@ jobs:
     - uses: actions/setup-python@v5
       with:
         python-version: '3.12'
-    
-    - name: Install Bash
-      run: |
-        choco install git -y
-        echo "C:\\Program Files\\Git\\bin" >> $env:GITHUB_ENV
-
-    - name: Validate Bash Installation
-      run: |
-        if (!(Get-Command bash -ErrorAction SilentlyContinue)) {
-          Write-Error "Bash is not installed or not in PATH."
-          exit 1
-        }
 
     - name: Restore cache
       uses: actions/cache@v4
