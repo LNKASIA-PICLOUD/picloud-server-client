@@ -327,7 +327,7 @@ QString Theme::about() const
     return tr("<p>Version %1. For more information visit <a href=\"%2\">https://lnkasia.com</a></p>"
               "<p>For known issues and help, please visit: <a href=\"https://lnkasia.com\">https://lnkasia.com</a></p>"
               "<p>Copyright LNKASIA TECHSOL</p>"
-              "<p><small>%6</small></p>")
+              "<p><small>PiCloud</small></p>")
         .arg(Utility::escape(Version::displayString()), Utility::escape(QStringLiteral("https://" APPLICATION_DOMAIN)),
             Utility::escape(QStringLiteral(APPLICATION_DOMAIN)), Utility::escape(vendor), Utility::escape(appNameGUI()),
             aboutVersions(Theme::VersionFormat::RichText));
