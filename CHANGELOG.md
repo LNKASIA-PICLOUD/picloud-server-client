@@ -1541,7 +1541,7 @@ ownCloud admins and users.
 * Bugfix - Windows VFS fixed some failing downloads: [#49](https://github.com/owncloud/client-desktop-vfs-win/pull/49)
 * Bugfix - Don't trigger ignore list when files are locked on the server: [#5382](https://github.com/owncloud/enterprise/issues/5382)
 * Bugfix - Properly resume upload with a partial local discovery: [#5382](https://github.com/owncloud/enterprise/issues/5382)
-* Bugfix - Add request time and other missing data to .owncloudsync.log: [#7348](https://github.com/owncloud/client/issues/7348)
+* Bugfix - Add request time and other missing data to .picloudsync.log: [#7348](https://github.com/owncloud/client/issues/7348)
 * Bugfix - Don't display a context-menu on the root folder: [#8595](https://github.com/owncloud/client/issues/8595)
 * Bugfix - Fix copy URL location for private links: [#9048](https://github.com/owncloud/client/issues/9048)
 * Bugfix - Fix status of files uploaded with TUS: [#9472](https://github.com/owncloud/client/pull/9472)
@@ -1608,7 +1608,7 @@ ownCloud admins and users.
    https://github.com/owncloud/enterprise/issues/5382
    https://github.com/owncloud/client/pull/10200
 
-* Bugfix - Add request time and other missing data to .owncloudsync.log: [#7348](https://github.com/owncloud/client/issues/7348)
+* Bugfix - Add request time and other missing data to .picloudsync.log: [#7348](https://github.com/owncloud/client/issues/7348)
 
    Some parameters were missing for some operations. This fix makes the log more
    complete and more useful as a result.
@@ -1984,7 +1984,7 @@ ownCloud admins and users.
 
 * Bugfix - Windows VFS: Keep file attributes and pin state: [#34](https://github.com/owncloud/client-desktop-vfs-win/pull/34)
 * Bugfix - Compare usernames case-insensitive: [#5174](https://github.com/owncloud/enterprise/issues/5174)
-* Bugfix - Use UTF-8 for .owncloudsync.log: [#9571](https://github.com/owncloud/client/pull/9571)
+* Bugfix - Use UTF-8 for .picloudsync.log: [#9571](https://github.com/owncloud/client/pull/9571)
 * Bugfix - Crash when interacting with a folder in an error state: [#9600](https://github.com/owncloud/client/issues/9600)
 * Bugfix - Database was recreated after its removal: [#9791](https://github.com/owncloud/client/issues/9791)
 * Bugfix - We fixed a potential crash: [#9864](https://github.com/owncloud/client/issues/9864)
@@ -2011,10 +2011,10 @@ ownCloud admins and users.
 
    https://github.com/owncloud/enterprise/issues/5174
 
-* Bugfix - Use UTF-8 for .owncloudsync.log: [#9571](https://github.com/owncloud/client/pull/9571)
+* Bugfix - Use UTF-8 for .picloudsync.log: [#9571](https://github.com/owncloud/client/pull/9571)
 
    We fixed a bug where Unicode file names were not correctly displayed in
-   .owncloudsync.log.
+   .picloudsync.log.
 
    https://github.com/owncloud/client/pull/9571
 
@@ -2797,7 +2797,7 @@ ownCloud admins and users.
 * Bugfix - Relaunching the client on macOS will show the settings dialog: [#8377](https://github.com/owncloud/client/issues/8377)
 * Bugfix - Only show the settings if they are explicitly requested on start: [#8590](https://github.com/owncloud/client/issues/8590)
 * Bugfix - Ignore consecutive errors for a period of time: [#8672](https://github.com/owncloud/client/issues/8672)
-* Bugfix - Properly print the sync events in .owncloudsync.log: [#8729](https://github.com/owncloud/client/issues/8729)
+* Bugfix - Properly print the sync events in .picloudsync.log: [#8729](https://github.com/owncloud/client/issues/8729)
 * Bugfix - Correctly handle file path comparison on Windows: [#8732](https://github.com/owncloud/client/issues/8732)
 * Bugfix - Locked files are not correctly synced: [#8761](https://github.com/owncloud/client/issues/8761)
 * Bugfix - Prompt the user of the cmd client what to do if all files where removed: [#8804](https://github.com/owncloud/client/issues/8804)
@@ -2910,9 +2910,9 @@ ownCloud admins and users.
 
    https://github.com/owncloud/client/issues/8672
 
-* Bugfix - Properly print the sync events in .owncloudsync.log: [#8729](https://github.com/owncloud/client/issues/8729)
+* Bugfix - Properly print the sync events in .picloudsync.log: [#8729](https://github.com/owncloud/client/issues/8729)
 
-   We fixed a bug in the .owncloudsync.log logger which caused enum values to be
+   We fixed a bug in the .picloudsync.log logger which caused enum values to be
    printed as a number rather than a string.
 
    https://github.com/owncloud/client/issues/8729
