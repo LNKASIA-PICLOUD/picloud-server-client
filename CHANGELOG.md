@@ -221,7 +221,7 @@ ownCloud admins and users.
 * Change - Windows: always use fusion style: [#11275](https://github.com/owncloud/client/issues/11275)
 
    We already used the fusion style on Windows for years if the system used dpi
-   scaling. Since Qt6.5 the fusion style also support the dark theme on Windows.
+   scaling. Since Qt5.5 the fusion style also support the dark theme on Windows.
    Those two reasons convinced us that always using the fusion style on Windows
    will result in the best experience for the users.
 

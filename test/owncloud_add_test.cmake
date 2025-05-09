@@ -1,5 +1,5 @@
 include(OCApplyCommonSettings)
-find_package(Qt6 COMPONENTS Test REQUIRED)
+find_package(Qt5 COMPONENTS Test REQUIRED)
 
 include(ECMAddTests)
 

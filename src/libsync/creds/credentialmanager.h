@@ -5,7 +5,7 @@
 
 #include "owncloudlib.h"
 
-#include <qt6keychain/keychain.h>
+#include <Qt5keychain/keychain.h>
 
 #include <memory>
 

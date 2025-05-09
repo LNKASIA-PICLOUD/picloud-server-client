@@ -92,7 +92,7 @@ target_link_libraries(libsync
     PRIVATE
         Qt::Concurrent
         ZLIB::ZLIB
-        Qt6Keychain::Qt6Keychain
+        Qt5Keychain::Qt5Keychain
 )
 
 apply_common_target_settings(libsync)

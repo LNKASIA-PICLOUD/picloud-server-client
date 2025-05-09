@@ -1,6 +1,6 @@
 include(ECMAddAppIcon)
 
-find_package(KDSingleApplication-qt6 1.0.0 REQUIRED)
+find_package(KDSingleApplication-Qt5 1.0.0 REQUIRED)
 
 set(client_UI_SRCS
     aboutdialog.ui
@@ -111,7 +111,7 @@ target_link_libraries(owncloudGui
         Qt::Widgets Qt::Network Qt::Xml Qt::Quick Qt::QuickWidgets Qt::QuickControls2
         newwizard folderwizard
         libsync
-        Qt6Keychain::Qt6Keychain
+        Qt5Keychain::Qt5Keychain
 )
 
 apply_common_target_settings(owncloudGui)

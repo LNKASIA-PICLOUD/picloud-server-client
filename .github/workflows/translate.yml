@@ -29,7 +29,7 @@ jobs:
           ref: "master"
 
       - name: install-deps
-        run: sudo apt install -y qt6-l10n-tools
+        run: sudo apt install -y Qt5-l10n-tools
 
       - name: l10n-remove-old
         run: |
@@ -37,7 +37,7 @@ jobs:
           git checkout translations/client_en.ts
 
       - name: l10n-read
-        run: /usr/lib/qt6/bin/lupdate src -no-obsolete -ts translations/client_en.ts
+        run: /usr/lib/Qt5/bin/lupdate src -no-obsolete -ts translations/client_en.ts
 
       - name: l10n-push-source
         uses: transifex/cli-action@v2

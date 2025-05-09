@@ -21,15 +21,15 @@ set(APPLE_SUPPRESS_X11_WARNING ON)
 
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
-find_package(QT 6.7 NAMES Qt6 COMPONENTS Core REQUIRED)
+find_package(QT 5.15 NAMES Qt5 COMPONENTS Core REQUIRED)
 
-find_package(Qt6 COMPONENTS Core Concurrent Network Widgets Xml Quick QuickWidgets QuickControls2 REQUIRED)
-find_package(Qt6LinguistTools REQUIRED)
+find_package(Qt5 COMPONENTS Core Concurrent Network Widgets Xml Quick QuickWidgets QuickControls2 REQUIRED)
+find_package(Qt5LinguistTools REQUIRED)
 get_target_property (QT_QMAKE_EXECUTABLE Qt::qmake IMPORTED_LOCATION)
 message(STATUS "Using Qt ${QT_VERSION} (${QT_QMAKE_EXECUTABLE})")
 
 if (UNIX AND NOT APPLE)
-    find_package(Qt6 REQUIRED COMPONENTS DBus)
+    find_package(Qt5 REQUIRED COMPONENTS DBus)
 endif()
 
 include(KDEInstallDirs)
